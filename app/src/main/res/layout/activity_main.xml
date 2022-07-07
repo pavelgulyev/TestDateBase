@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/addButton"
+        android:id="@+id/addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Добавить"
@@ -21,7 +21,7 @@
         tools:ignore="UsingOnClickInXml"
         />
     <EditText
-        android:id="@+id/editTextSearch"
+        android:id="@+id/txtSearch"
         android:layout_width="409dp"
         android:layout_height="50dp"
         android:layout_marginTop="4dp"
@@ -34,8 +34,8 @@
         android:id="@+id/list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/addButton"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSearch"
+        app:layout_constraintBottom_toTopOf="@+id/addBtn"
+        app:layout_constraintTop_toBottomOf="@+id/txtSearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

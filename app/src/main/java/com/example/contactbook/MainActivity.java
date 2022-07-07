@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Intent intent = new Intent(this, EditPerson.class);
         contacts = findViewById(R.id.list);
-        search = findViewById(R.id.editTextSearch);
+        search = findViewById(R.id.txtSearch);
         adapter = new DatabaseAdapter(this);
         AdapterView.OnItemClickListener itemListener = (parent, v, position, id) -> {
             Person selectedPerson = (Person) parent.getItemAtPosition(position);
@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onResume();
         adapter.open();
-        fullContactsClick();
         persons.clear();
         persons.addAll(adapter.getPersons());
         adapter.close();
@@ -69,24 +68,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void fullContactsClick()
-    {
-        String[] names = {"Иван", "Сергей", "Дмитрий", "Аркадий"};
-        String[] families = {"Иванов", "Пеньков", "Синьков", "Глушков"};
-        String[] patronymics = {"Максимович","Павлович","Романович","Степанович"};
-        String[] phones = {"98657456787","95635479876","9806548798","94536547878"};
-        adapter.open();
-        for (int i=0;i<30;i++) {
-            int nameRand = (int)(Math.random()*(3+1));
-            int famRand = (int)(Math.random()*(3+1));
-            int patrRand = (int)(Math.random()*(3+1));
-            int phoneRand = (int)(Math.random()*(3+1));
-            adapter.insert(new Person(1,names[nameRand],families[famRand],
-                    patronymics[patrRand],phones[phoneRand],null));
-        }
-        persons.clear();
-        persons.addAll(adapter.getPersons());
-        adapter.close();
-        personsAdapter.notifyDataSetChanged();
-    }
+
 }
