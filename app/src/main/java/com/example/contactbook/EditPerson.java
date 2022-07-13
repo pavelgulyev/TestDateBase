@@ -19,6 +19,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -62,7 +63,7 @@ public class EditPerson extends AppCompatActivity {
             family.setText(person.getSurname());
             patronymic.setText(person.getPatronymic());
             phone.setText(person.getPhone());
-//            avatar.setImageBitmap(person.getImage());
+            avatar.setImageBitmap(person.getImage());
             if(getIntent().getByteArrayExtra("img") != null)
                 avatar.setImageBitmap(convertCompressedByteArrayToBitmap(getIntent().getByteArrayExtra("img")));
         }
@@ -127,8 +128,19 @@ public class EditPerson extends AppCompatActivity {
             person = new Person(id, name.getText().toString(), family.getText().toString(),
                     patronymic.getText().toString(), phone.getText().toString(), image);
             adapter.open();
-            if(id!=-1) adapter.update(person);
-            else adapter.insert(person);
+            if(id!=-1)
+            {
+                adapter.update(person);
+
+            }
+            else {
+                adapter.insert(person);
+                Log.i("person","name="+name.getText().toString()+" surname="+family.getText().toString()+
+                        patronymic.getText().toString()+" number="+phone.getText().toString());
+
+
+                Log.i("count","count="+adapter.getCount());
+            }
             adapter.close();
             goHome();
         }

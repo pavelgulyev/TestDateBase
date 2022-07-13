@@ -13,11 +13,11 @@ public class Person implements Serializable {
     private byte[] image;
     private String phone;
 
-    public Person(int id, String name, String family, String patronymic, String phone, byte[] image)
+    public Person(int id, String name, String surname, String patronymic, String phone, byte[] image)
     {
         this.id = id;
         this.name = name;
-        this.surname = family;
+        this.surname = surname;
         this.patronymic = patronymic;
         this.phone = phone;
         this.image = image;

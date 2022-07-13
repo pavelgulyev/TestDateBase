@@ -25,10 +25,9 @@ public class PersonAdapter extends ArrayAdapter<Person> {
 
         @SuppressLint("ViewHolder") View view=inflater.inflate(this.layout, parent, false);
 
-        TextView nameView = view.findViewById(R.id.nameField);
-        TextView familyView = view.findViewById(R.id.familyField);
-        TextView patronymicView = view.findViewById(R.id.patronymicField);
-
+        TextView nameView = view.findViewById(R.id.nameTxt);
+        TextView familyView = view.findViewById(R.id.surnameTxt);
+        TextView patronymicView = view.findViewById(R.id.patronymicTxt);
         Person person = persons.get(position);
 
         patronymicView.setText(person.getPatronymic());

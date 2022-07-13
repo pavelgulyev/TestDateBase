@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent">
     <TextView
-        android:id="@+id/nameField"
+        android:id="@+id/nameTxt"
         android:layout_width="405dp"
         android:layout_height="39dp"
         android:text="Имя"
@@ -12,19 +12,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/familyField"
+        android:id="@+id/surnameTxt"
         android:layout_width="195dp"
         android:layout_height="37dp"
         android:text="Фамилия"
-        app:layout_constraintEnd_toStartOf="@+id/patronymicField"
-        app:layout_constraintStart_toStartOf="@+id/nameField"
-        app:layout_constraintTop_toBottomOf="@+id/nameField" />
+        app:layout_constraintEnd_toStartOf="@+id/patronymicTxt"
+        app:layout_constraintStart_toStartOf="@+id/nameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/nameTxt" />
     <TextView
-        android:id="@+id/patronymicField"
+        android:id="@+id/patronymicTxt"
         android:layout_width="209dp"
         android:layout_height="32dp"
         android:layout_marginTop="1dp"
         android:text="Отчество"
-        app:layout_constraintEnd_toEndOf="@+id/nameField"
-        app:layout_constraintTop_toBottomOf="@+id/nameField" />
+        app:layout_constraintEnd_toEndOf="@+id/nameTxt"
+        app:layout_constraintTop_toBottomOf="@+id/nameTxt" />
 </androidx.constraintlayout.widget.ConstraintLayout>
